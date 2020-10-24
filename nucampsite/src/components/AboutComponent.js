@@ -3,13 +3,13 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 
 
-function RenderPartner({ partner } = partner.name) {
+function RenderPartner({ partner }) {
     if ({ partner }) {
         return(
             <React.Fragment>
-                <Media obtject='true' src={partner.image} alt={partner.name} width='150' />
-                <Media body='true' className='ml-5 mb-4'>
-                    <Media heading='true'>
+                <Media object src={partner.image} alt={partner.name} width='150' />
+                <Media body className='ml-5 mb-4'>
+                    <Media heading>
                         {partner.name}
                     </Media>
                     {partner.description}
