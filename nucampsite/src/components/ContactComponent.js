@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbItem,
     Button, Label, Col, Row  } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, Form, Errors } from 'react-redux-form';
+import { FadeTransform } from 'react-animation-components';
 
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
@@ -60,6 +61,11 @@ class Contact extends Component {
     render() {
         
         return (
+            <FadeTransform
+            in
+            transformProps={{
+                exitTransform: 'scale(0.5) translateY(50%)'
+            }}>
             <div className="container">
                 <div className="row">
                     <div className="col">
@@ -71,7 +77,7 @@ class Contact extends Component {
                         <hr />
                     </div>
                 </div>
-
+               
                 <div className="row row-content align-items-center">
                     <div className="col-sm-4">
                         <h5>Our Address</h5>
@@ -86,6 +92,7 @@ class Contact extends Component {
                         <a role="button" className="btn btn-link" href="mailto:fakeemail@fakeemail.co"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
                     </div>
                 </div>
+            
                 <div className="row row-content">
                     <div className="col-12">
                         <h2>Send us your Feedback</h2>
@@ -234,6 +241,7 @@ class Contact extends Component {
                     </div>
                 </div>
             </div>
+            </FadeTransform>
         );
     }
 }
